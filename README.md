@@ -1,0 +1,97 @@
+# Pocket-Sized-Text-Reader
+A smart System which shows the text file in a compartable display 
+📦 Project Overview
+This project converts a normal scientific calculator into a smart ESP32-based device using an ESP32-S3 Super Mini. It features a hidden OLED display, magnetic power control, Wi-Fi file upload, and low-power operation.
+
+🧰 Components Used
+ESP32-S3 Super Mini
+128×32 OLED Display (I²C)
+Reed Switch (magnetic power control)
+450mAh Li-ion Battery
+Scientific Calculator (donor body & buttons)
+Wires, black electrical tape
+USB-C cable
+🔌 Pinout Used
+OLED Display (I²C)
+GPIO 10 → SDA
+GPIO 11 → SCL
+Calculator Buttons
+GPIO 4
+GPIO 5
+GPIO 7
+Only 3 GPIOs are used to for Up , Down and Enter/Exit Operation.
+
+🛠️ Step-by-Step Build Process
+1️⃣ Opening the Calculator
+Carefully open the calculator casing without damaging the front keypad or PCB.
+
+2️⃣ Identifying Button Pads
+Use the image below to identify which calculator button pads are required.
+
+Calculator Buttons
+
+These pads will be connected to ESP32 GPIOs.
+
+3️⃣ Tapping the Button Traces
+Instead of individual buttons, traces are tapped directly to reduce wiring.
+
+Tapped Traces
+
+Carefully solder thin wires to these traces.
+
+4️⃣ Connecting the ESP32-S3
+Connect the button wires to GPIO 4, 5, and 7
+Connect the OLED display to GPIO 10 (SDA) and GPIO 11 (SCL)
+Circuit Diagram Ensure proper grounding and short wire lengths.
+
+5️⃣ Power & Battery Setup
+Battery positive → ESP32 power terminal
+Battery negative → Reed switch → ESP32 GND
+This allows the device to turn ON only when a magnet is nearby.
+
+6️⃣ Fitting Components Inside the Case
+Remove excess plastic from inside the calculator shell
+Carefully place the ESP32, OLED, and battery
+Use black electrical tape to hide the OLED from the front
+Mark the visible text area beforehand.
+
+7️⃣ Closing the Back Cover
+The back cover will not fit immediately.
+
+✔️ Apply patience and small adjustments ✔️ Avoid pressing directly on the OLED
+
+Once adjusted, the cover fits securely.
+
+📡 File Upload Process (Wi-Fi)
+Power the calculator using the USB-C port
+Go to the Wi-Fi Upload option on the device
+Connect your phone/PC to the calculator’s Wi-Fi
+Enter the password shown on the OLED
+Open a browser and visit the IP address displayed
+(Future upgrade: clickable text link on OLED)
+
+Uploading Files
+Only .txt files are supported
+Click Upload, select file, and upload
+File appears instantly on the calculator
+Deleting Files
+Reconnect to the calculator Wi-Fi
+Open the same web interface
+Delete files directly from the browser
+🔋 Charging the Battery
+Press & hold the panic button to turn off the screen
+Bring a magnet near the reed switch
+Blue LED ON → Battery charging
+⏱️ 30 minutes charging ≈ 3+ hours backup
+
+🚀 Final Notes
+This project is a combination of:
+
+Embedded programming
+Power optimization
+Hardware reverse engineering
+Creative enclosure hacking
+Feel free to modify, improve, or learn from it.
+
+🙌 Thanks for checking out this project
+If you liked it, consider starring ⭐ the repo and following for more ESP32 projects! and To Support my work Buy me a Chai
